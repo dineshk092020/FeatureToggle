@@ -19,7 +19,7 @@ export class AppComponent {
   }
   message: string;
 
-  receiveMessage($event) {
+  messageEventHandler($event) {
     this.name = $event;
   }
 }
