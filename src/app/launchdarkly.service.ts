@@ -3,7 +3,7 @@ import {
   Component,
   Output,
   Input,
-  EventEmitter
+  EventEmitter,
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import * as LDClient from 'launchdarkly-js-client-sdk';
@@ -23,7 +23,7 @@ export class LaunchdarklyService {
   @Output() messageEvent: EventEmitter<string> = new EventEmitter();
 
   constructor() {
-    this.user = { key: 'qa', anonymous: true };
+    this.user = { kind: 'user', key: 'qa2', region: 'NA', country: 'US' };
     this.client = LDClient.initialize('613196e03eb897267017a321', this.user);
     this.client.setStreaming(true);
 
